@@ -6,6 +6,10 @@
  * the encoder doesn't declare 0 (VUI bitstream_restriction), the decoder assumes
  * the level's max DPB and adds frames of latency even with no B-frames.
  * `rewriteSpsLowLatency` injects "reorder=0" so the decoder emits immediately.
+ *
+ * Mirror: packages/agent-core/src/utils/sps.ts is the canonical copy (the agent
+ * rewrites the SPS at the source). This browser copy is defense-in-depth for an
+ * unpatched agent and becomes a no-op once the SPS already declares it. Keep in sync.
  */
 
 export interface SpsVuiInfo {
@@ -234,5 +238,6 @@ export function rewriteSpsLowLatency(spsNal: Uint8Array): Uint8Array | null {
   w.ue(walk.numRefFrames) // max_dec_frame_buffering ≥ max_num_ref_frames (valid)
   w.bit(1) // rbsp_stop_one_bit (toBytes zero-pads the rest)
 
-  return Uint8Array.from([0x67, ...addEmulation(w.toBytes())])
+  // Preserve the original NAL header byte (nal_ref_idc may differ from 0x67).
+  return Uint8Array.from([spsNal[0], ...addEmulation(w.toBytes())])
 }
