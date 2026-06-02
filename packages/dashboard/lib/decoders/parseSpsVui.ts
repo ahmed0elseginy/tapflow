@@ -6,6 +6,10 @@
  * the encoder doesn't declare 0 (VUI bitstream_restriction), the decoder assumes
  * the level's max DPB and adds frames of latency even with no B-frames.
  * `rewriteSpsLowLatency` injects "reorder=0" so the decoder emits immediately.
+ *
+ * Mirror: packages/agent-core/src/utils/sps.ts is the canonical copy (the agent
+ * rewrites the SPS at the source). This browser copy is defense-in-depth for an
+ * unpatched agent and becomes a no-op once the SPS already declares it. Keep in sync.
  */
 
 export interface SpsVuiInfo {
