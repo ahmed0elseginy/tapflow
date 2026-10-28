@@ -1,7 +1,7 @@
 {
   "name": "@tapflowio/android-agent",
   "version": "0.30.0",
-  "description": "Android emulator agent for tapflow — ADB control and scrcpy H.264 streaming",
+  "description": "Android emulator agent for tapflow \u2014 ADB control and scrcpy H.264 streaming",
   "keywords": [
     "tapflow",
     "android",
@@ -49,7 +49,7 @@
   },
   "scripts": {
     "postinstall": "node -e \"if (process.platform === 'darwin') { try { require('fs').chmodSync('bin/emulator-encoder', 0o755) } catch {} }\"",
-    "build": "tsc -b",
+    "build": "node init && tsc -b",
     "typecheck": "tsc -b && tsc -p src/__tests__/tsconfig.json",
     "test": "vitest run",
     "lint": "eslint src",
