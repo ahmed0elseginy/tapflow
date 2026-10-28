@@ -1,7 +1,7 @@
 {
   "name": "@tapflowio/protocol",
   "version": "0.30.0",
-  "description": "Wire protocol contract for tapflow — the WebSocket message types exchanged between browser, relay, and device agents",
+  "description": "Wire protocol contract for tapflow \u2014 the WebSocket message types exchanged between browser, relay, and device agents",
   "keywords": [
     "tapflow",
     "protocol",
