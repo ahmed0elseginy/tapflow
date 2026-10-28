@@ -1,7 +1,7 @@
 {
   "name": "@tapflowio/protocol",
   "version": "0.30.0",
-  "description": "Wire protocol contract for tapflow — the WebSocket message types exchanged between browser, relay, and device agents",
+  "description": "Wire protocol contract for tapflow \u2014 the WebSocket message types exchanged between browser, relay, and device agents",
   "keywords": [
     "tapflow",
     "protocol",
@@ -56,7 +56,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build": "node init && tsc -b",
     "typecheck": "tsc -b && tsc -p tsconfig.assertions.json && tsc -p src/__tests__/tsconfig.json",
     "test": "vitest run",
     "lint": "eslint src"

@@ -1,7 +1,7 @@
 {
   "name": "@tapflowio/flow-runner",
   "version": "0.30.0",
-  "description": "Deterministic YAML flow runner for tapflow — replay UI test flows against simulators/emulators with zero LLM calls",
+  "description": "Deterministic YAML flow runner for tapflow \u2014 replay UI test flows against simulators/emulators with zero LLM calls",
   "keywords": [
     "tapflow",
     "flow",
@@ -43,7 +43,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build": "node init && tsc -b",
     "typecheck": "tsc --noEmit && tsc -p src/__tests__/tsconfig.json",
     "test": "vitest run",
     "lint": "eslint src"

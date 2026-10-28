@@ -16,8 +16,6 @@ packages/relay/public/
 !.work/CLAUDE.md
 
 # env
-.env
-.env.local
 .env.*.local
 
 # tapflow runtime config (auto-generated, may contain local paths)
@@ -32,7 +30,6 @@ tapflow.config.json
 !docs/public/*.png
 
 # vscode
-.vscode
 
 # typescript build cache
 *.tsbuildinfo
@@ -92,3 +89,4 @@ playground/sample-apps/ios/build/
 playground/sample-apps/android/.gradle/
 playground/sample-apps/android/app/build/
 playground/sample-apps/android/local.properties
+config.bat
